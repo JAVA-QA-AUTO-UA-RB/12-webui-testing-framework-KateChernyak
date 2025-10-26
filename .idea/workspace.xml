@@ -4,9 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="bc148d79-7088-4507-9e88-e7cad9ed5f61" name="Changes" comment="Remove GitHub Classroom autograding configuration&#10;&#10;Deleted autograding setup files (`autograding.json` and `github-classroom.yml`) to reflect a transition away from GitHub Classroom workflows. Simplified ChromeDriver setup in tests by eliminating unnecessary arguments, improving readability and maintainability.">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="bc148d79-7088-4507-9e88-e7cad9ed5f61" name="Changes" comment="Remove GitHub Classroom autograding configuration&#10;&#10;Deleted autograding setup files (`autograding.json` and `github-classroom.yml`) to reflect a transition away from GitHub Classroom workflows. Simplified ChromeDriver setup in tests by eliminating unnecessary arguments, improving readability and maintainability." />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -55,10 +53,12 @@
     "TestNG.SeleniumTestngTest.abTestingPageHasSpecificTextTest.executor": "Run",
     "TestNG.SeleniumTestngTest.executor": "Run",
     "TestNG.SeleniumTestngTest.myTest.executor": "Run",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultAutoModeForALLUsers.v1": "true",
+    "com.intellij.ml.llm.matterhorn.ej.ui.settings.DefaultModelSelectionForGA.v1": "true",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "/Users/irinaklimenko/Documents/GitHub/12-webui-testing-framework-Irene169",
+    "last_opened_file_path": "C:/_projects/12-webui-testing-framework-KateChernyak",
     "project.structure.last.edited": "Project",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.45181876",
@@ -192,6 +192,17 @@
     </task>
     <option name="localTasksCounter" value="10" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
