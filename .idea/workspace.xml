@@ -5,7 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="bc148d79-7088-4507-9e88-e7cad9ed5f61" name="Changes" comment="Remove GitHub Classroom autograding configuration&#10;&#10;Deleted autograding setup files (`autograding.json` and `github-classroom.yml`) to reflect a transition away from GitHub Classroom workflows. Simplified ChromeDriver setup in tests by eliminating unnecessary arguments, improving readability and maintainability.">
+      <change afterPath="$PROJECT_DIR$/README_TEST.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/SeleniumTestngTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/SeleniumTestngTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -52,8 +54,14 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "TestNG.SeleniumTestngTest.Option2OfDropdownTest.executor": "Run",
     "TestNG.SeleniumTestngTest.abTestingPageHasSpecificTextTest.executor": "Run",
+    "TestNG.SeleniumTestngTest.addRemoveElementsTest.executor": "Run",
+    "TestNG.SeleniumTestngTest.checkBoxesTest.executor": "Run",
+    "TestNG.SeleniumTestngTest.dragAndDropTest.executor": "Run",
     "TestNG.SeleniumTestngTest.executor": "Run",
+    "TestNG.SeleniumTestngTest.formAuthenticationTest.executor": "Run",
+    "TestNG.SeleniumTestngTest.horizontalSliderTest.executor": "Run",
     "TestNG.SeleniumTestngTest.myTest.executor": "Run",
     "git-widget-placeholder": "main",
     "junie.onboarding.icon.badge.shown": "true",
@@ -77,11 +85,11 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SeleniumTestngTest.abTestingPageHasSpecificTextTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SeleniumTestngTest.Option2OfDropdownTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SELENIUM_TESTNG_HOMEWORK" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SeleniumTestngTest" />
-      <option name="METHOD_NAME" value="abTestingPageHasSpecificTextTest" />
+      <option name="METHOD_NAME" value="Option2OfDropdownTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -89,11 +97,35 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="SeleniumTestngTest.myTest" type="TestNG" temporary="true" nameIsGenerated="true">
+    <configuration name="SeleniumTestngTest.dragAndDropTest" type="TestNG" temporary="true" nameIsGenerated="true">
       <module name="SELENIUM_TESTNG_HOMEWORK" />
       <option name="PACKAGE_NAME" value="" />
       <option name="MAIN_CLASS_NAME" value="SeleniumTestngTest" />
-      <option name="METHOD_NAME" value="myTest" />
+      <option name="METHOD_NAME" value="dragAndDropTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeleniumTestngTest.formAuthenticationTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SELENIUM_TESTNG_HOMEWORK" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SeleniumTestngTest" />
+      <option name="METHOD_NAME" value="formAuthenticationTest" />
+      <option name="TEST_OBJECT" value="METHOD" />
+      <properties />
+      <listeners />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="SeleniumTestngTest.horizontalSliderTest" type="TestNG" temporary="true" nameIsGenerated="true">
+      <module name="SELENIUM_TESTNG_HOMEWORK" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="MAIN_CLASS_NAME" value="SeleniumTestngTest" />
+      <option name="METHOD_NAME" value="horizontalSliderTest" />
       <option name="TEST_OBJECT" value="METHOD" />
       <properties />
       <listeners />
@@ -104,8 +136,10 @@
     <recent_temporary>
       <list>
         <item itemvalue="TestNG.SeleniumTestngTest" />
-        <item itemvalue="TestNG.SeleniumTestngTest.abTestingPageHasSpecificTextTest" />
-        <item itemvalue="TestNG.SeleniumTestngTest.myTest" />
+        <item itemvalue="TestNG.SeleniumTestngTest.horizontalSliderTest" />
+        <item itemvalue="TestNG.SeleniumTestngTest.dragAndDropTest" />
+        <item itemvalue="TestNG.SeleniumTestngTest.formAuthenticationTest" />
+        <item itemvalue="TestNG.SeleniumTestngTest.Option2OfDropdownTest" />
       </list>
     </recent_temporary>
   </component>
