@@ -130,8 +130,8 @@ src
 ```
 
 Примітки:
-- Існуючі `BasicSetupTest` та інші TestNG‑класи можна або зберегти для порівняння, або інкапсулювати їх логіку в Hooks/Page Object.
-- Логіку ініціалізації WebDriver з `BasicSetupTest` перенесіть у хуки (`@Before`, `@After`).
+- Існуючі `base.BasicSetupTest` та інші TestNG‑класи можна або зберегти для порівняння, або інкапсулювати їх логіку в Hooks/Page Object.
+- Логіку ініціалізації WebDriver з `base.BasicSetupTest` перенесіть у хуки (`@Before`, `@After`).
 
 ---
 
@@ -185,7 +185,7 @@ public class WebHooks {
 }
 ```
 
-За потреби винесіть фабрику браузера в окремий утилітарний клас. Якщо вже є готові налаштування у `BasicSetupTest`, пере використайте їх у хуках.
+За потреби винесіть фабрику браузера в окремий утилітарний клас. Якщо вже є готові налаштування у `base.BasicSetupTest`, пере використайте їх у хуках.
 
 ---
 
@@ -252,7 +252,7 @@ import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.testng.Assert;
 import pages.AbTestingPage;
-import pages.HomePage;
+import pages.AddRemoveElementsPage;
 
 public class UiSteps {
     private HomePage home;
@@ -326,7 +326,7 @@ public class CucumberTestRunner extends AbstractTestNGCucumberTests {
 ## 9. Що саме потрібно зробити у цьому ДЗ
 1) Додати у `pom.xml` залежності Cucumber (+ за потреби Surefire/Failsafe конфіг).  
 2) Додати рекомендовану структуру тек для `features`, `steps`, `hooks`, `pages`, `runners`.  
-3) Перенести ініціалізацію WebDriver із `BasicSetupTest` у Cucumber‑хуки.  
+3) Перенести ініціалізацію WebDriver із `base.BasicSetupTest` у Cucumber‑хуки.  
 4) Міграція сценаріїв із README.md у BDD‑формат (`.feature` файли) — не менше 4‑6 сценаріїв.  
 5) Реалізувати step definitions для всіх сценаріїв, використовуючи Page Object.  
 6) Налаштувати Cucumber‑раннер під TestNG, теги, репорти (`pretty`, `html`, `json`).  
