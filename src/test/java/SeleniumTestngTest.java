@@ -1,6 +1,6 @@
+import base.BasicSetupTest;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
-import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -12,7 +12,7 @@ import org.testng.annotations.Test;
 import java.time.Duration;
 import java.util.List;
 
-// This test class inherits BasicSetupTest class, where the browser is initialized
+// This test class inherits base.BasicSetupTest class, where the browser is initialized
 // browser variable is available here as it's inherited, so you'll have it available at any place
 public class SeleniumTestngTest extends BasicSetupTest {
 
@@ -20,9 +20,9 @@ public class SeleniumTestngTest extends BasicSetupTest {
     //Сценарій 1
     @Test
     public void abTestingPageHasSpecificTextTest() throws InterruptedException {
-        browser.get("https://the-internet.herokuapp.com/abtest");
+        driver.get("https://the-internet.herokuapp.com/abtest");
 
-        WebElement abTestingTaskLink = browser.findElement(By.cssSelector("div.example h3"));
+        WebElement abTestingTaskLink = driver.findElement(By.cssSelector("div.example h3"));
         abTestingTaskLink.click();
         Thread.sleep(3000);
 // довгий час очікування, але ніяк не могла зрозуміти чому падає через раз. допоки не побачила наступний текст
@@ -33,17 +33,17 @@ public class SeleniumTestngTest extends BasicSetupTest {
     //Сценарій 2
     @Test
     public void addRemoveElementsTest() throws InterruptedException {
-        browser.get("https://the-internet.herokuapp.com/add_remove_elements/");
+        driver.get("https://the-internet.herokuapp.com/add_remove_elements/");
 
 
-        WebElement addElement = browser.findElement(By.cssSelector("button[onclick='addElement()']"));
+        WebElement addElement = driver.findElement(By.cssSelector("button[onclick='addElement()']"));
 
         //додаю 3 Delete та перевіряю їх відображення на сторінці
         for (int i = 0; i < 3; i++)
             addElement.click();
         Thread.sleep(2000);
 
-        List<WebElement> deleteButtons = browser.findElements(By.cssSelector("button.added-manually"));
+        List<WebElement> deleteButtons = driver.findElements(By.cssSelector("button.added-manually"));
         Assert.assertEquals(deleteButtons.size(), 3, "Невірна кількість кнопок Delete");
 
         //видалення 3 кнопок
@@ -53,16 +53,16 @@ public class SeleniumTestngTest extends BasicSetupTest {
         Thread.sleep(2000);
 
         //перевірка, що кнопки видалились
-        List<WebElement> latestButtons = browser.findElements(By.cssSelector("button.added-manually"));
+        List<WebElement> latestButtons = driver.findElements(By.cssSelector("button.added-manually"));
         Assert.assertEquals(latestButtons.size(), 0, "Не всі кнопки видалені");
     }
 
     //Сценарій 3
     @Test
     public void checkBoxesTest() throws InterruptedException {
-        browser.get("https://the-internet.herokuapp.com/checkboxes");
+        driver.get("https://the-internet.herokuapp.com/checkboxes");
 
-        List<WebElement> checkboxes = browser.findElements(By.cssSelector("input[type='checkbox']"));
+        List<WebElement> checkboxes = driver.findElements(By.cssSelector("input[type='checkbox']"));
         for (WebElement checkbox : checkboxes) {
             if (!checkbox.isSelected()) {
                 checkbox.click();
@@ -78,10 +78,10 @@ public class SeleniumTestngTest extends BasicSetupTest {
 
     //Сценарій 4
     @Test
-    public void Option2OfDropdownTest() throws InterruptedException {
-        browser.get("https://the-internet.herokuapp.com/dropdown");
+    public void Option2fDropdownTest() throws InterruptedException {
+        driver.get("https://the-internet.herokuapp.com/dropdown");
 
-        WebElement dropdown = browser.findElement(By.id("dropdown"));
+        WebElement dropdown = driver.findElement(By.id("dropdown"));
 
         Select select = new Select(dropdown);
         select.selectByVisibleText("Option 2");
@@ -95,27 +95,27 @@ public class SeleniumTestngTest extends BasicSetupTest {
     //Сценарій 5
     @Test
     public void formAuthenticationTest() throws InterruptedException {
-        browser.get("https://the-internet.herokuapp.com/login");
+        driver.get("https://the-internet.herokuapp.com/login");
 
         //введення імені та паролю
-        browser.findElement(By.id("username")).sendKeys("tomsmith");
-        browser.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
-        browser.findElement(By.cssSelector("button.radius")).click();
+        driver.findElement(By.id("username")).sendKeys("tomsmith");
+        driver.findElement(By.id("password")).sendKeys("SuperSecretPassword!");
+        driver.findElement(By.cssSelector("button.radius")).click();
 
-        WebElement message = browser.findElement(By.id("flash"));
+        WebElement message = driver.findElement(By.id("flash"));
         String actualMessage = message.getText().trim();
         System.out.println(" Actual flash message: ' " + actualMessage + "'");
         Assert.assertTrue(actualMessage.contains("You logged into a secure area!"),
                 "Очікуваний повідомлення не отримано! Отримано: " + actualMessage);
 
         //logout
-        browser.findElement(By.cssSelector("a.button.secondary.radius")).click();
+        driver.findElement(By.cssSelector("a.button.secondary.radius")).click();
 
         //тут я чекаю поки зявиться "Login Page"
-        WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(3));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(3));
         wait.until(ExpectedConditions.textToBePresentInElementLocated(By.tagName("h2"), "Login Page"));
 
-        String headerText = browser.findElement(By.tagName("h2")).getText();
+        String headerText = driver.findElement(By.tagName("h2")).getText();
         System.out.println(" Header after logout: '" + headerText + "'");
         Assert.assertTrue(headerText.contains("Login Page"), "Сторінка логіну не відкрита після Logout ");
     }
@@ -123,10 +123,10 @@ public class SeleniumTestngTest extends BasicSetupTest {
     //сценарій 6
     @Test
     public void dragAndDropTest() throws InterruptedException {
-        browser.get("https://the-internet.herokuapp.com/drag_and_drop");
+        driver.get("https://the-internet.herokuapp.com/drag_and_drop");
 
-        WebElement columnA = browser.findElement(By.id("column-a"));
-        WebElement columnB = browser.findElement(By.id("column-b"));
+        WebElement columnA = driver.findElement(By.id("column-a"));
+        WebElement columnB = driver.findElement(By.id("column-b"));
 
         String beforeA = columnA.findElement(By.tagName("header")).getText();
         String beforeB = columnB.findElement(By.tagName("header")).getText();
@@ -134,7 +134,7 @@ public class SeleniumTestngTest extends BasicSetupTest {
         System.out.println((" До переміщення: А = " + beforeA + ", B = " + beforeB));
 
         //симуляція перетаскування
-        Actions actions = new Actions(browser);
+        Actions actions = new Actions(driver);
         actions.clickAndHold(columnA).moveToElement(columnB).release().perform();
         Thread.sleep(2000);
 
@@ -150,10 +150,10 @@ public class SeleniumTestngTest extends BasicSetupTest {
     //сценарій 7
     @Test
     public void horizontalSliderTest() throws InterruptedException {
-        browser.get("https://the-internet.herokuapp.com/horizontal_slider");
+        driver.get("https://the-internet.herokuapp.com/horizontal_slider");
 
-        WebElement slider = browser.findElement(By.cssSelector("input[type='range']"));
-        WebElement value = browser.findElement(By.id("range"));
+        WebElement slider = driver.findElement(By.cssSelector("input[type='range']"));
+        WebElement value = driver.findElement(By.id("range"));
 
         String startValue = value.getText();
         System.out.println("Початкове значення слайдера: " + startValue);

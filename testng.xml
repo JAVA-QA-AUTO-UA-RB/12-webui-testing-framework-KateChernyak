@@ -1,8 +1,15 @@
 <!DOCTYPE suite SYSTEM "http://testng.org/testng-1.0.dtd" >
-<suite name="The Internet App Tests" verbose="1">
-    <test name="[TheInternetApp] Functional Smoke">
+<suite name="The Internet App Tests" verbose="1" parallel="classes" thread-count="3">
+    <test name="The Internet App">
         <classes>
             <class name="SeleniumTestngTest"/>
+            <class name="tests.AbTestingTest"/>
+            <class name="tests.AddRemoveElementsTest"/>
+            <class name="tests.CheckboxesTest"/>
+            <class name="tests.DropdownTest"/>
+            <class name="tests.AuthenticationTest"/>
+            <class name="tests.DragAndDropTest"/>
+            <class name="tests.HorizontalSliderTest"/>
         </classes>
     </test>
 </suite>
