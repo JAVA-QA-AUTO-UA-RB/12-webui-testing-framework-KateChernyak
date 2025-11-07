@@ -154,28 +154,32 @@ public class SeleniumTestngTest extends BasicSetupTest {
         WebDriverWait wait = new WebDriverWait(browser, Duration.ofSeconds(10));
 
         WebElement slider = wait.until(ExpectedConditions.visibilityOfElementLocated(By.cssSelector("input[type='range']")));
+        WebElement value = wait.until(ExpectedConditions.visibilityOfElementLocated(By.id("range")));
 
-        WebElement value = browser.findElement(By.id("range"));
+        int steps = 8;
+        double expected = steps * 0.5;
+        String expectedValue = formatValue(expected);
 
-        String startValue = value.getText();
-        System.out.println("Початкове значення слайдера: " + startValue);
-
-        for(int i = 0; i < 8; i++) {
+        for(int i =0; i < steps; i++) {
             slider.sendKeys(Keys.ARROW_RIGHT);
         }
 
-        wait.until(ExpectedConditions.not(
-                ExpectedConditions.textToBePresentInElement(value, startValue)));
-
-        String newValue = value.getText();
-        System.out.println("Поточне значення слайдера: " + newValue);
-
-        double numericValue = Double.parseDouble(newValue);
-
-        Assert.assertTrue(numericValue >=3.5 && numericValue <= 4.5,
-                "Слайдер не встав у положення 4 (зараз " + numericValue + ")");
+        String current = value.getText();
+        System.out.println("Поточне значення: " + current);
+            Assert.assertEquals(current, expectedValue, " Слайдер повинен показувати " + expectedValue);
+    }
+    private String formatValue(double val) {
+        if(val % 1 == 0) {
+            return String.valueOf((int) val);
+        }
+        return String.valueOf(val);
     }
 }
+
+
+
+        
+
 
 
 
